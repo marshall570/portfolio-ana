@@ -13,25 +13,72 @@
       content="Apresentação, Ana Lima, Escrita, Produção de Conteúdo, Revisão, SEO"
     />
     <link rel="shortcut icon" href="./assets/favicon.png" type="image/x-icon" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
     <link rel="stylesheet" href="./style.css" />
     <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      rel="dns-prefetch"
       src="https://kit.fontawesome.com/f5712c4092.js"
       crossorigin="anonymous"
     ></script>
+    <script src="./script.js"></script>
     <title>ANA LIMA | ESCRITORA</title>
   </head>
 
   <body>
     <header>
-      <section class="menu">
-        <p>Ana Lima</p>
-
-        <div class="anchors">
-          <a href="#sobre">SOBRE MIM</a>
-          <a href="#trabalhos">TRABALHOS</a>
-          <a href="#contato">CONTATO</a>
+      <nav class="navbar fixed-top">
+        <div class="container-fluid">
+          <p>Ana Lima</p>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasNavbar"
+            aria-controls="offcanvasNavbar"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div
+            class="offcanvas offcanvas-end"
+            tabindex="-1"
+            id="offcanvasNavbar"
+            aria-labelledby="offcanvasNavbarLabel"
+          >
+            <div class="offcanvas-body">
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="offcanvas"
+                aria-label="Close"
+              ></button>
+              <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="#sobre"
+                    >SOBRE MIM</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#trabalhos">TRABALHOS</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#contato">CONTATO</a>
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
-      </section>
+      </nav>
 
       <section class="banner">
         <h1>Oi, Eu sou a Ana!</h1>
@@ -78,8 +125,8 @@
           <strong>marketing</strong> ou <strong>revisões</strong>.
           <i
             >Entre em contato para discutir como ela pode ajudar você a alcançar
-            seus objetivos</i
-          >.
+            seus objetivos!</i
+          >
         </p>
       </section>
     </div>
@@ -87,8 +134,7 @@
     <div class="trabalhos" id="trabalhos">
       <h1>MEUS TRABALHOS</h1>
 
-      <h2>Se interessou pelo meu trabalho?</h2>
-      <h3>Entre em contato comigo pelas redes abaixo!</h3>
+      <p></p>
     </div>
 
     <div class="contato" id="contato">
@@ -104,7 +150,10 @@
           rel="noopener noreferrer"
           ><i class="fa-brands fa-whatsapp"></i
         ></a>
-        <a href="https://t.me/analelima" target="_blank" rel="noopener noreferrer"
+        <a
+          href="https://t.me/analelima"
+          target="_blank"
+          rel="noopener noreferrer"
           ><i class="fa-brands fa-telegram"></i
         ></a>
         <a

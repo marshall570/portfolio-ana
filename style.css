@@ -40,9 +40,9 @@ header {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   width: 100%;
-  min-height: 40rem;
+  min-height: 42rem;
   padding: 2rem;
   background-image: url("./assets/sandy.jpg");
   background-size: cover;
@@ -50,16 +50,49 @@ header {
   box-shadow: 0 1rem 2rem -1rem rgba(0, 0, 0, 0.75);
 }
 
-.menu {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
+.container-fluid > p {
+  margin-bottom: 0;
 }
 
-.menu > p {
+.navbar-toggler {
+  color: transparent;
+  border: 0;
+  border-radius: 0;
+  padding: 0;
+  margin: 0 0.25rem 0 0.25rem;
+}
+
+.navbar-toggler-icon {
+  filter: saturate(100%) invert();
+
+}
+
+.offcanvas {
+  max-width: 60%;
+  background: rgb(0, 142, 118);
+  background: linear-gradient(
+    315deg,
+    rgba(0, 142, 118, 1) 0%,
+    rgba(30, 72, 71, 1) 51%
+  );
+}
+
+.btn-close {
+  margin-bottom: 1rem;
+  filter: saturate(100%) invert();
+  transform: scale(125%);
+}
+
+.nav-link,
+.nav-link.active {
+  color: var(--light_text_color) !important;
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+
+.container-fluid > p {
   font-family: Caveat;
-  font-size: 2.5rem;
+  font-size: 2rem;
   color: var(--light_text_color);
 }
 
@@ -77,7 +110,6 @@ header {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 32rem;
 }
 
 .banner h1 {
@@ -246,23 +278,16 @@ footer > a {
   color: var(--dark_text_color);
 }
 
-@media only screen and (orientation: portrait) {
+@media only screen and (max-width: 1200px) {
   header {
-    /* display: none; */
     width: 100%;
     min-height: 18rem;
     padding: 0;
     justify-content: center;
   }
 
-  .menu {
-    display: none;
-  }
-
   .banner {
     flex-direction: column;
-    width: 90%;
-    min-height: auto;
   }
 
   .banner h1 {
@@ -271,7 +296,7 @@ footer > a {
   }
 
   .banner p {
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
 
   .sobre,
@@ -324,5 +349,4 @@ footer > a {
   .links a {
     font-size: 4rem;
   }
-
 }
