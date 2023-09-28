@@ -12,6 +12,13 @@
   --background_color: #faf4fc;
 }
 
+:target::before {
+  content: "";
+  display: block;
+  height: 3rem;
+  margin: -2rem 0 0;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -50,10 +57,6 @@ header {
   box-shadow: 0 1rem 2rem -1rem rgba(0, 0, 0, 0.75);
 }
 
-.container-fluid > p {
-  margin-bottom: 0;
-}
-
 .navbar-toggler {
   color: transparent;
   border: 0;
@@ -63,8 +66,8 @@ header {
 }
 
 .navbar-toggler-icon {
-  filter: saturate(100%) invert();
-
+  filter: invert(100%) sepia(98%) saturate(23%) hue-rotate(263deg)
+    brightness(116%) contrast(85%);
 }
 
 .offcanvas {
@@ -79,7 +82,8 @@ header {
 
 .btn-close {
   margin-bottom: 1rem;
-  filter: saturate(100%) invert();
+  filter: invert(100%) sepia(98%) saturate(23%) hue-rotate(263deg)
+    brightness(116%) contrast(85%);
   transform: scale(125%);
 }
 
@@ -93,16 +97,8 @@ header {
 .container-fluid > p {
   font-family: Caveat;
   font-size: 2rem;
+  margin-bottom: 0;
   color: var(--light_text_color);
-}
-
-.anchors > a {
-  text-decoration: none;
-  font-size: 1.15rem;
-  font-weight: bold;
-  font-family: Work Sans;
-  color: var(--light_text_color);
-  margin: 0 0.5rem 0 0.5rem;
 }
 
 .banner {
@@ -180,10 +176,10 @@ header {
   justify-content: space-between;
   padding: 3rem;
   width: 100%;
-  min-height: 40rem;
 }
 
 .profile_pic {
+  display: flex;
   width: 35%;
 }
 
@@ -204,13 +200,15 @@ header {
 .contato h1 {
   font-family: Playfair Display;
   font-weight: bold;
-  font-size: 3.25rem;
+  font-size: 3rem;
   margin-bottom: 1rem;
+  margin-top: 2rem;
   color: var(--accent_color);
 }
 
-.labeled-text p {
-  font-size: 1.2rem;
+.labeled-text p,
+.trabalhos p {
+  font-size: 1.1rem;
   margin: 0.5rem 0 0.5rem 0;
   color: var(--dark_text_color);
   text-align: justify;
@@ -222,32 +220,131 @@ header {
   flex-direction: column;
   align-items: center;
   width: 100%;
-  padding: 2rem;
-  margin-bottom: 2rem;
-  min-height: 40rem;
+  padding: 1.5rem 3rem;
+  margin-bottom: 1rem;
 }
 
-.trabalhos h2,
+.contato {
+  min-height: 36rem;
+}
+
 .contato h2 {
-  font-size: 1.75rem;
+  font-size: 1.5rem;
   font-style: italic;
   font-weight: normal;
   margin-bottom: 0.5rem;
   color: var(--dark_text_color);
 }
 
-.trabalhos h3,
 .contato h3 {
-  font-size: 1.5rem;
-  margin-bottom: 2rem;
+  font-size: 1.25rem;
   color: var(--accent_color);
+}
+
+.grade_exp {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.atividade {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 30%;
+  min-height: 100%;
+  padding: 0.8rem;
+  margin: 1rem 0 1rem;
+  background-color: #ffffff;
+  border-radius: 0.75rem;
+  box-shadow: 0.2rem 0.2rem 0.05rem 0.05rem rgba(0, 0, 0, 0.5);
+  transition: all 0.5s;
+}
+
+.atividade:hover {
+  transform: scale(110%);
+}
+
+.atividade_titulo {
+  display: flex;
+  height: 10%;
+  justify-content: center;
+}
+
+.atividade_titulo h1 {
+  font-size: 1.75rem;
+  text-align: center;
+}
+
+.atividade_desc {
+  display: flex;
+  flex-grow: 1;
+  align-items: center;
+  width: 100%;
+  min-height: 85%;
+}
+
+.atividade_desc p {
+  font-size: 0.95rem;
+}
+
+.carousel {
+  width: 95%;
+  min-height: 26rem;
+  margin-top: 1rem;
+  border-radius: 0.75rem;
+  box-shadow: 0.2rem 0.2rem 0.05rem 0.05rem rgba(0, 0, 0, 0.5);
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+}
+
+.carousel-indicators button {
+  background-color: var(--dark_accent_color) !important;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  filter: invert(43%) sepia(87%) saturate(320%) hue-rotate(106deg)
+    brightness(95%) contrast(84%);
+}
+
+.text_carousel {
+  display: flex;
+  width: 100%;
+  min-height: 24rem;
+  padding: 0 12rem;
+  align-items: center;
+  justify-content: center;
+  justify-self: center;
+}
+
+.text_carousel p {
+  font-size: 1.5rem;
+  font-weight: bold;
+  font-style: italic;
+  text-align: center;
+}
+
+.carousel-caption {
+  display: flex !important;
+  justify-content: center;
+  padding: 0;
+}
+
+.carousel-caption p {
+  font-size: 1rem;
+  font-style: italic;
 }
 
 .links {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  margin-top: 5rem;
+  margin-top: 3rem;
   width: 75%;
 }
 
@@ -279,6 +376,10 @@ footer > a {
 }
 
 @media only screen and (max-width: 1200px) {
+  :target::before {
+    margin: 0;
+  }
+
   header {
     width: 100%;
     min-height: 18rem;
@@ -299,12 +400,25 @@ footer > a {
     font-size: 1rem;
   }
 
+  .profile_pic {
+    justify-content: center;
+  }
+
+  .profile_pic img {
+    width: 18rem;
+  }
+
+  .labeled-text {
+    padding: 0;
+    margin: 0;
+  }
+
   .sobre,
   .trabalhos,
   .contato {
     flex-direction: column;
     min-height: auto;
-    padding: 0.75rem;
+    padding: 0rem 2rem 0 2rem;
   }
 
   .labeled-text h1,
@@ -314,15 +428,11 @@ footer > a {
     text-align: center;
   }
 
-  .labeled-text h2,
-  .trabalhos h2,
   .contato h2 {
     font-size: 1.25rem;
     text-align: center;
   }
 
-  .labeled-text h3,
-  .trabalhos h3,
   .contato h3 {
     font-size: 1.1rem;
     text-align: center;
@@ -336,13 +446,47 @@ footer > a {
   }
 
   .profile_pic,
-  .labeled-text {
+  .labeled-text,
+  .atividade {
     width: 100%;
+  }
+
+  .grade_exp {
+    flex-direction: column;
+  }
+
+  .atividade {
+    min-height: auto;
+    margin-bottom: 1.25rem;
+    justify-content: center;
+  }
+
+  .atividade_titulo,
+  .atividade_desc {
+    height: auto;
+    min-height: auto;
+  }
+
+  .atividade_titulo h1 {
+    margin: 1rem 0 1rem 0;
+  }
+
+  .text_carousel {
+    padding: 4rem;
+  }
+
+  .text_carousel p {
+    font-size: 1rem;
+  }
+
+  .carousel-caption p {
+    font-size: 0.75rem;
   }
 
   .links {
     width: 95%;
     margin-top: 1rem;
+    margin-top: 2rem;
     justify-content: space-between;
   }
 
